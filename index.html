@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.8);">
+
+    <header>
+        <div class="nav">
+            <a href="#" style="margin-left: 60px;"><i class="fa-solid fa-cubes-stacked"></i> FOOD DELIGHT</a>
+            <a href="card.html"> <i class="fa-solid fa-cart-shopping"></i> </a>
+        </div>
+    </header>
+
+
+    <section>
+        <div class="container">
+            <div align="center">
+                <H1>add to card</H1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row" id="products"></div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        let deta = [{
+            id: "1",
+            name: "Fish",
+            price: 150,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8fDB8fHww"
+        },
+        {
+            id: "2",
+            name: "Burger",
+            price: 165,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1457460866886-40ef8d4b42a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8fDB8fHww"
+        },
+        {
+            id: "3",
+            name: "Ghughra",
+            price: 80,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1543992321-cefacfc2322e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8fDB8fHww"
+        },
+        {
+            id: "4",
+            name: "Pasta",
+            price: 85,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1597393353365-9d4366392fe9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8fDB8fHww"
+        },
+        {
+            id: "5",
+            name: "Vegetable",
+            price: 125,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8fDB8fHww"
+        },
+        {
+            id: "6",
+            name: "Shushi",
+            price: 280,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHJlc3RhdXJhbnQlMjBmb29kfGVufDB8fDB8fHww"
+        },
+        {
+            id: "7",
+            name: "Veg pizza ",
+            price: 135,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBpenphfGVufDB8fDB8fHww"
+        },
+        {
+            id: "8",
+            name: "Margherita p.",
+            price: 105,
+            qty: 1,
+            image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHx8MHx8fDA%3D"
+        },]
+
+        const viewData = () => {
+            let tbl = ""
+            deta.map((value) => {
+                tbl += `
+                <div class="col-3">
+                    <div class="card" style="margin-bottom:20px;">
+                        <img src="${value.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">name:- ${value.name}</p>
+                            <p class="card-text">Rs.${value.price}</p>
+                            <a href=""  class="btn btn-primary" onclick="addData(${value.id})">ADD-TO-CARD</a>
+                        </div>
+                   </div>
+                </div>
+            `
+            })
+            document.getElementById('products').innerHTML = tbl;
+        }
+        viewData()
+
+        let carts = [];
+        const addData = (id) => {
+            if (JSON.parse(localStorage.getItem('ca')) == null || JSON.parse(localStorage.getItem('ca')) == undefined) {
+                deta.map((val)=>{
+                    if (val.id == id) {
+                        carts.push(val)
+                    }
+                })
+                localStorage.setItem('ca',JSON.stringify(carts))
+            }else{
+                let old = JSON.parse(localStorage.getItem('ca'));
+                deta.map((val)=>{
+                    if(val.id == id){
+                        old.push(val)
+                    }
+                })
+                localStorage.setItem('ca',JSON.stringify(old))
+            }
+            alert("your deta succesfully submited")
+            viewData();
+        }
+    </script>
+</body>
+
+</html>

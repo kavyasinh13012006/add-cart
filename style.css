@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: gray;
+    width: 100%;
+}
+.nav{
+    width: 100%;
+    padding: 0 80px;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+    
+    align-items: center;
+}
+.nav a{
+    color:white;
+    text-decoration: none;
+    font-size: 25px;
+}
